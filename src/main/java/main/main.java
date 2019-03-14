@@ -1,11 +1,10 @@
-package Master;
+package main.java.main;
 
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -17,9 +16,13 @@ public class main extends Application {
     @Override
     public  void start(Stage primaryStage) throws Exception{
 
-        URL url = getClass().getResource("/view/Master.fxml");
+//        for (int x = 0; x< getClass().getDeclaredMethods().length; x++){
+//            System.out.println( getClass().getDeclaredMethods()[x].getName());
+//        }
+        System.out.println(getClass().getResource("main.fxml"));
+        URL url = getClass().getResource("main.fxml");
         if (url == null) {
-            System.out.println("No FXML file found, \"" + "Master.fxml" + "\"");
+            System.out.println("No FXML file found, \"" + "main.fxml" + "\"");
             Platform.exit();
             return;
         }
@@ -27,7 +30,7 @@ public class main extends Application {
         Parent root = FXMLLoader.load(url);
         primStage = primaryStage;
         primStage.setTitle("Game Launcher");
-        primStage.setScene(new Scene(root, 600, 550));
+        primStage.setScene(new Scene(root, 600, 400));
         primStage.show();
         System.out.println();
     }

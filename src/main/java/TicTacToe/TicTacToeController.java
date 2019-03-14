@@ -1,8 +1,7 @@
-package TicTacToe;
+package main.java.TicTacToe;
+import main.java.main.*;
 
-import Master.main;
-import util.Users;
-
+import main.java.util.*;
 import javafx.application.Platform;
 import javafx.event.Event;
 import javafx.scene.Scene;

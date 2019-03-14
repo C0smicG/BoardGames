@@ -1,7 +1,6 @@
-package TicTacToe;
+package main.java.TicTacToe;
 
-import util.Board;
-import util.Users;
+import main.java.util.*;
 
 public class TicTacToe {
     Users currentTurn,player1,player2;

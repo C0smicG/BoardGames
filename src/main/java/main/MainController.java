@@ -1,6 +1,6 @@
-package Master;
+package main.java.main;
 
-import util.Users;
+import main.java.util.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,8 +9,9 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
-import TicTacToe.TicTacToeController;
+import main.java.TicTacToe.TicTacToeController;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -35,7 +36,7 @@ public class MainController {
 //            if (listOfFiles[i].isDirectory() && listOfFiles[i].getName() == "util") {
 //                System.out.println("Directory " + listOfFiles[i].getName());
 //            }
-//            else if (listOfFiles[i].isDirectory() && listOfFiles[i].getName() == "Master"){
+//            else if (listOfFiles[i].isDirectory() && listOfFiles[i].getName() == "main"){
 //                System.out.println("Directory " + listOfFiles[i].getName());
 //            }
 //        }
@@ -56,9 +57,9 @@ public class MainController {
             currentPlayers.add(database.get(playertwo.getText()));
         }
 
-
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/"+gameToOpen));
+
+            FXMLLoader fxmlLoader = new FXMLLoader( new File(System.getProperty("user.dir") + "\\out\\production\\BoardGames\\main\\java\\" + gameName + "\\"+gameToOpen).toURI().toURL());
             Parent gameFXML = fxmlLoader.load();
 
 

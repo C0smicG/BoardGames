@@ -5,7 +5,7 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/8"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="TicTacToe.TicTacToeController">
+            fx:controller="main.java.TicTacToe.TicTacToeController">
     <top>
         <MenuBar BorderPane.alignment="CENTER">
             <menus>
