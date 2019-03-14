@@ -1,4 +1,27 @@
-package main.java.models;
+package models;
 
-public class main {
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+public class Main extends Application {
+
+    public static Stage primStage;
+
+    @Override
+    public  void start(Stage primaryStage) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("/view/mainView.fxml"));
+        primStage = primaryStage;
+        primStage.setTitle("Game Launcher");
+        primStage.setScene(new Scene(root, 300, 275));
+        primStage.show();
+        System.out.println();
+    }
+
+
+    public static void main(String[] args) {
+        launch(args);
+    }
 }

@@ -1,4 +1,4 @@
-package main.java.models;
+package models;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +9,7 @@ public class Board {
 
 
         // constructing the Board with the specified rows and columns
-        Board(int r, int c)
+        public Board(int r, int c)
         {
             rows = r;
             cols = c;
@@ -40,7 +40,7 @@ public class Board {
         }
 
         // returns array that represents the Board
-        List<List<String>> getBoard()
+        public List<List<String>> getBoard()
         {
             return board;
         }
