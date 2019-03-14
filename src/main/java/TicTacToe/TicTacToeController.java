@@ -1,8 +1,7 @@
-package controller;
+package TicTacToe;
 
-import TicTacToe.TicTacToe;
-import models.Main;
-import models.Users;
+import Master.main;
+import util.Users;
 
 import javafx.application.Platform;
 import javafx.event.Event;
@@ -15,6 +14,8 @@ import javafx.stage.Stage;
 
 public class TicTacToeController {
     private TicTacToe game;
+    Users player1;
+    Users player2;
     private int turn = 0;
     public Button b1, b2, b3, b4, b5, b6, b7, b8, b9;
 
@@ -22,8 +23,12 @@ public class TicTacToeController {
     public TicTacToeController() {
         // Initialize Players
         game = new TicTacToe();
-        Users player1 = new Users("Kenny");
-        Users player2 = new Users("Gev");
+
+    }
+
+    public void setPlayers(Users player1,Users player2){
+        this.player1 = player1;
+        this.player2 = player2;
         game.setStages(player1, player2);
         game.setFirstStage("0", player1);
     }
@@ -109,7 +114,7 @@ public class TicTacToeController {
 
 
         dialog.initModality(Modality.APPLICATION_MODAL);
-        dialog.initOwner(Main.primStage);
+        dialog.initOwner(main.primStage);
         dialog.setTitle("Game Over!");
         VBox dialogVbox = new VBox(20);
         dialogVbox.getChildren().add(new Text(winnerOrTie()));

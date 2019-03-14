@@ -1,7 +1,7 @@
 package TicTacToe;
 
-import models.Board;
-import models.Users;
+import util.Board;
+import util.Users;
 
 public class TicTacToe {
     Users currentTurn,player1,player2;
