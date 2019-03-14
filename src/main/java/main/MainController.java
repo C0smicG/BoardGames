@@ -1,5 +1,13 @@
 package main.java.main;
 
+import main.java.Reversi.*;
+import main.java.BattleShip.*;
+import main.java.Checkers.*;
+import main.java.TicTacToe.*;
+
+
+
+
 import main.java.util.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,7 +17,6 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
-import main.java.TicTacToe.TicTacToeController;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -44,7 +51,6 @@ public class MainController {
     public void handlePlayClicked(){
         String gameName = ((RadioButton)toggleGroup.getSelectedToggle()).getText();
         String gameToOpen = ((RadioButton)toggleGroup.getSelectedToggle()).getId();
-        System.out.println(playerone.getText());
         if (!database.containsKey(playerone.getText())){
             currentPlayers.add(new Users(playerone.getText()));
         }else{
@@ -64,10 +70,32 @@ public class MainController {
 
 
 
-            TicTacToeController controller = fxmlLoader.getController();
+            if(gameName.equals("TicTacToe")){
+                TicTacToeController controller = fxmlLoader.getController();
+                controller.setPlayers(currentPlayers.get(0),currentPlayers.get(1));
+
+            }
+
+            if(gameName.equals("Reversi")){
+                ReversiController controller = fxmlLoader.getController();
+                controller.setPlayers(currentPlayers.get(0),currentPlayers.get(1));
+
+            }
+
+            if(gameName.equals("Checkers")){
+                CheckersController controller = fxmlLoader.getController();
+                controller.setPlayers(currentPlayers.get(0),currentPlayers.get(1));
+
+            }
+
+            if(gameName.equals("BattleShip")){
+                BattleShipController controller = fxmlLoader.getController();
+                controller.setPlayers(currentPlayers.get(0),currentPlayers.get(1));
+
+            }
 
 
-            controller.setPlayers(currentPlayers.get(0),currentPlayers.get(1));
+
             Stage stage = new Stage();
             stage.setTitle(gameName);
             stage.setScene(new Scene(gameFXML));
