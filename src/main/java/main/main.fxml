@@ -19,7 +19,7 @@
          </toggleGroup></RadioButton>
       <RadioButton id="TictactoeView.fxml" fx:id="TicTacToeView" layoutX="126.0" layoutY="106.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="TicTacToe" toggleGroup="$toggleGroup" />
       <RadioButton id="CheckersView.fxml" fx:id="CheckersView" layoutX="239.0" layoutY="106.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="Checkers" toggleGroup="$toggleGroup" />
-      <RadioButton id="BattleShipView.fxml" fx:id="BattleShipView" layoutX="236.0" layoutY="77.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="Battleship" toggleGroup="$toggleGroup" />
+      <RadioButton id="MemoryView.fxml" fx:id="MemoryView" layoutX="236.0" layoutY="77.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="Memory" toggleGroup="$toggleGroup" />
       <Button layoutX="191.0" layoutY="346.0" mnemonicParsing="false" onAction="#handlePlayClicked" prefHeight="27.0" prefWidth="92.0" text="Play" />
       <Text layoutX="194.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Steam" textAlignment="CENTER">
          <font>
