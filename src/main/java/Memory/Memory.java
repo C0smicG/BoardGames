@@ -2,7 +2,7 @@ package Memory;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Memory //implements GameLogic
+public class Memory implements GameLogic
 {
     private Board board;
     Users[] players;
