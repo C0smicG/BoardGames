@@ -4,9 +4,11 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import util.GameLogic;
 import util.Users;
 import util.Board;
-public class Checkers {
+public class Checkers implements GameLogic {
 
     public String redplayer;
     public String whiteplayer;
@@ -129,6 +131,24 @@ public class Checkers {
             total = 12 - getNumberOfPieces(whiteplayer);
         }
         return total;
+    }
+
+    public void makeMove(int row, int col){
+
+    }
+
+
+    public boolean isValid(){
+        return false;
+    }
+
+
+    public void changePlayer(){
+    }
+
+
+    public boolean IsGameOver(){
+        return false;
     }
 
     public void makeMove(int fr, int fc, int sr, int sc) {

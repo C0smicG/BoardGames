@@ -8,23 +8,27 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Circle;
 import javafx.scene.control.Label;
 
+import util.Controller;
 import util.Users;
 
-public class CheckersController {
+import java.awt.*;
+import javafx.event.Event;
+
+public class CheckersController implements Controller {
 
 
 
-        @FXML
-        private GridPane PieceGrids;
-        @FXML
-        private Label Player1;
-        @FXML
-        private Label Player2;
+    @FXML
+    private GridPane PieceGrids;
+    @FXML
+    private Label Player1;
+    @FXML
+    private Label Player2;
 
-        @FXML
-        private Label Score1;
-        @FXML
-        private Label Score2;
+    @FXML
+    private Label Score1;
+    @FXML
+    private Label Score2;
 
 
     private Checkers game;
@@ -38,6 +42,10 @@ public class CheckersController {
         public void setPlayers(Users player1, Users player2) {
             Player1.setText(player1.getName());
             Player2.setText(player2.getName());
+        }
+
+        public void handleButtonClicked(Event event){
+
         }
         public void boardClicked(MouseEvent e){
 

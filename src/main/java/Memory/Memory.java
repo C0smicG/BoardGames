@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import util.*;
 
-public class Memory //implements GameLogic
+public class Memory implements GameLogic
 {
     private Board board;
     Users[] players;

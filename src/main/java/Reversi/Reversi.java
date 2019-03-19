@@ -6,8 +6,9 @@ import java.util.Scanner;
 
 
 import util.Board;
+import util.GameLogic;
 
-public class Reversi {
+public class Reversi implements GameLogic {
 
     private String WHITE_PLAYER = "W";
     private String BLACK_PLAYER = "B";
@@ -132,6 +133,18 @@ public class Reversi {
             return BLACK_PLAYER;
         }
         return WHITE_PLAYER;
+    }
+
+    public boolean isValid() {
+        return false;
+    }
+
+    public void changePlayer() {
+    }
+
+
+    public boolean IsGameOver() {
+        return false;
     }
 
     public boolean isCellAvailable(int row, int col) {

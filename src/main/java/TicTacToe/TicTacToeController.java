@@ -3,6 +3,7 @@ package TicTacToe;
 import Master.main;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import util.Controller;
 import util.Users;
 
 import javafx.application.Platform;
@@ -14,7 +15,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class TicTacToeController {
+public class TicTacToeController implements Controller {
     private TicTacToe game;
     Users player1;
     Users player2;
@@ -41,9 +42,7 @@ public class TicTacToeController {
         game.setStages(player1, player2);
         game.setFirstStage("0", player1);
 
-
-        System.out.print("PLAYERONE");
-        System.out.print(PlayerOne);
+        
         PlayerOne.setText(player1.getName());
         PlayerTwo.setText(player2.getName());
 
@@ -86,7 +85,7 @@ public class TicTacToeController {
         if (source.equals(b9)) {
             handleMove(source,2,2);
         }
-        if (!game.getWinner().equals("") || game.isGameOver()) {
+        if (!game.getWinner().equals("") || game.IsGameOver()) {
             this.createEndGame();
         }
 
@@ -160,7 +159,7 @@ public class TicTacToeController {
     private String winnerOrTie() {
         if (!game.getWinner().equals("")) {
             return "Winner!: " + game.getWinner();
-        } else if (game.isGameOver()) {
+        } else if (game.IsGameOver()) {
             return "Game was a tie!";
         }
         return "";

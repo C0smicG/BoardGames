@@ -1,9 +1,10 @@
 package TicTacToe;
 
 import util.Board;
+import util.GameLogic;
 import util.Users;
 
-public class TicTacToe {
+public class TicTacToe implements GameLogic {
     Users currentTurn,player1,player2;
     private String currentStage = "";
     private int emptyCells = 9;
@@ -53,7 +54,10 @@ public class TicTacToe {
         currentTurn = user;
     }
 
-    private void changeplayer(){
+
+
+
+    public void changePlayer(){
         if(currentStage == O_stage){
             currentStage = X_stage;
         }
@@ -101,6 +105,14 @@ public class TicTacToe {
         return board.getBoard().get(index1).get(index2) == "'";
     }
 
+    public void makeMove(int row, int col){
+
+    }
+
+    public boolean isValid(){
+        return false;
+    }
+
     public void makeMove(int rowIndex, int columnIndex, Users player){
         if(!isValid(rowIndex, columnIndex)){
             return;
@@ -111,7 +123,7 @@ public class TicTacToe {
         if(!winner.equals("")){
             return;
         }
-        changeplayer();
+        changePlayer();
     }
 
     private void checkWinner(String playername){
@@ -135,7 +147,7 @@ public class TicTacToe {
             winner = "draw";
     }
 
-    public boolean isGameOver() {
+    public boolean IsGameOver() {
         return emptyCells == 0;
     }
 

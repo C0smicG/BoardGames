@@ -14,6 +14,8 @@ import javafx.util.Duration;
 import util.Controller;
 import util.Users;
 
+import javafx.event.Event;
+
 
 public class MemoryController implements Controller
 {
@@ -36,6 +38,10 @@ public class MemoryController implements Controller
     public void setPlayers(Users player1, Users player2){
         p1Label.setText(player1.getName());
         p2Label.setText(player2.getName());
+
+    }
+
+    public void handleButtonClicked(Event event){
 
     }
 
