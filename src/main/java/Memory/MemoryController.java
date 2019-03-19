@@ -11,9 +11,11 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.*;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
+import util.Controller;
+import util.Users;
 
 
-public class MemoryController
+public class MemoryController implements Controller
 {
     @FXML
     private GridPane grid;
@@ -29,6 +31,13 @@ public class MemoryController
     private Memory game;
     private int dimension = 2;
     private ArrayList<Label> move = new ArrayList<>();
+
+
+    public void setPlayers(Users player1, Users player2){
+        p1Label.setText(player1.getName());
+        p2Label.setText(player2.getName());
+
+    }
 
     public void startGame()
     {

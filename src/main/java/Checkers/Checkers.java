@@ -1,27 +1,23 @@
 package Checkers;
 
-import util.Board;
-import jdk.nashorn.internal.runtime.linker.LinkerCallSite;
-
-import javax.sound.midi.SysexMessage;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
+import util.Users;
+import util.Board;
 public class Checkers {
 
-    private String redplayer;
-    private String whiteplayer;
-    private String currentplayer;
-    private Board board;
-    private List<Point> possibleMoves = new ArrayList<>();
+    public String redplayer;
+    public String whiteplayer;
+    public String currentplayer;
+    public Board board;
+    public List<Point> possibleMoves = new ArrayList<>();
 
-/*
+
     public static void main(String[] args) {
         Checkers cn = new Checkers();
         while (!cn.gameOver()) {
-            System.out.println(cn.currentplayer);
             List<Integer> piece = cn.selectPiece();
             int row = piece.get(0);
             int col = piece.get(1);
@@ -31,10 +27,11 @@ public class Checkers {
             int tc = tile.get(1);
             if (cn.checkMove(tr, tc)) {
                 cn.makeMove(row, col, tr, tc);
+
             }
         }
     }
-*/
+
     public Checkers() {
 
         board = new Board(8, 8);
@@ -61,13 +58,23 @@ public class Checkers {
     }
 
 
-    public void switchPlayer() {
+    public void deleteInBetween(int fr, int fc, int sr, int sc) {
+        int midcol = (int) Math.ceil((fc + sc) / 2);
+        int midrow = (int) Math.ceil((fr + sr) / 2);
+
+        if (this.board.getBoard().get(midrow).get(midcol).equals(oppositePlayer(currentplayer))) {
+
+            this.board.getBoard().get(midrow).set(midcol, "'");
+        }
+    }
+
+    public String switchPlayer() {
         if (this.currentplayer.equals(whiteplayer)) {
             currentplayer = redplayer;
         } else {
             currentplayer = whiteplayer;
-
         }
+        return currentplayer;
     }
 
     public int kingRow() {
@@ -89,15 +96,23 @@ public class Checkers {
         return "RK";
     }
 
+    public String oppositePlayer(String player) {
+        if (player == whiteplayer) {
+            return redplayer;
+        }
+        return whiteplayer;
+    }
+
     public boolean gameOver() {
         return getNumberOfPieces(whiteplayer) == 0 || getNumberOfPieces(redplayer) == 0;
     }
 
     public int getNumberOfPieces(String player) {
         int count = 0;
+        System.out.println("count");
         for (int x = 0; x < this.board.getRows(); x++) {
             for (int y = 0; y < this.board.getCols(); y++) {
-                if (this.board.getBoard().get(y).get(x).equals(player) || this.board.getBoard().get(y).get(x).equals(playerKing(player))) {
+                if (this.board.getBoard().get(x).get(y).equals(player) || this.board.getBoard().get(x).get(y).equals(playerKing(player))) {
                     count += 1;
                 }
             }
@@ -106,15 +121,29 @@ public class Checkers {
         return count;
     }
 
+    public int scoreBoard(String player) {
+        int total = 0;
+        if (player == whiteplayer) {
+            total = 12 - getNumberOfPieces(redplayer);
+        } else {
+            total = 12 - getNumberOfPieces(whiteplayer);
+        }
+        return total;
+    }
+
     public void makeMove(int fr, int fc, int sr, int sc) {
+        List<List<String>> state = this.board.getBoard();
+        String currentPiece = this.board.getBoard().get(fr).get(fc);
         this.board.getBoard().get(fr).set(fc, "'");
         if (sr == kingRow()) {
-            this.board.getBoard().get(sr).set(sc, playerKing(currentplayer));
+            state.get(sr).set(sc, playerKing(currentplayer));
         } else {
-            this.board.getBoard().get(sr).set(sc, currentplayer);
+            state.get(sr).set(sc, currentPiece);
         }
         possibleMoves.clear();
+        deleteInBetween(fr, fc, sr, sc);
         switchPlayer();
+        this.board.updateBoard(state);
     }
 
     public boolean checkMove(int r, int c) {
@@ -144,7 +173,8 @@ public class Checkers {
 
     public void getAllPossibleMoves(int r, int c) {
         if (currentplayer == whiteplayer) {
-            if (this.board.getBoard().get(r).get(c).equals(whiteplayer)) {
+            if (this.board.getBoard().get(r).get(c).equals(whiteplayer) ||
+                    this.board.getBoard().get(r).get(c).equals(playerKing(whiteplayer))) {
                 goUp(r, c);
             }
             if (this.board.getBoard().get(r).get(c).equals(playerKing(whiteplayer))) {
@@ -153,7 +183,8 @@ public class Checkers {
             }
         }
         if (currentplayer == redplayer) {
-            if (this.board.getBoard().get(r).get(c).equals(redplayer)) {
+            if (this.board.getBoard().get(r).get(c).equals(redplayer) ||
+                    this.board.getBoard().get(r).get(c).equals(playerKing(redplayer))) {
                 goDown(r, c);
             }
             if (this.board.getBoard().get(r).get(c).equals(playerKing(redplayer))) {
@@ -178,17 +209,16 @@ public class Checkers {
     private void goUp(int r, int c) {
         //This allows tile to go up
 
-        if (isValidRange(c - 1) && isValidRange(r - 1) && !addFreeTile(r - 1, c - 1)) {
+        if (!addFreeTile(r - 1, c - 1)) {
             addFreeTile(r - 2, c - 2);
         }
-        if (isValidRange(c + 1) && isValidRange(r - 1) && !addFreeTile(r - 1, c + 1)) {
+        if (!addFreeTile(r - 1, c + 1)) {
             addFreeTile(r - 2, c + 2);
         }
     }
 
     public boolean addFreeTile(int r, int c) {
-        if (freeTile(r, c)) {
-
+        if (isValidRange(r) && isValidRange(c) && freeTile(r, c)) {
             possibleMoves.add(new Point(r, c));
             return true;
         }
@@ -199,4 +229,6 @@ public class Checkers {
 
         return this.board.getBoard().get(r).get(c).equals("'");
     }
+
+
 }

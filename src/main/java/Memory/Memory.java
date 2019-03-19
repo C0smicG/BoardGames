@@ -1,7 +1,6 @@
 package Memory;
 import java.util.ArrayList;
 import java.util.Random;
-
 import util.*;
 
 public class Memory //implements GameLogic
@@ -11,6 +10,7 @@ public class Memory //implements GameLogic
     int currentTurn;
     private int [] scoreboard;
     int dimension;
+
 
     Memory(int dim) // dim should be even by the way
     {

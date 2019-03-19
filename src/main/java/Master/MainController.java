@@ -78,17 +78,17 @@ public class MainController {
 
             }
 
-//            if(gameName.equals("Checkers")){
-//                CheckersController controller = fxmlLoader.getController();
-//                controller.setPlayers(currentPlayers.get(0),currentPlayers.get(1));
-//
-//            }
-//
-//            if(gameName.equals("Memory")){
-//                MemoryController controller = fxmlLoader.getController();
-//                controller.setPlayers(currentPlayers.get(0),currentPlayers.get(1));
-//
-//            }
+            if(gameName.equals("Checkers")){
+                CheckersController controller = fxmlLoader.getController();
+                controller.setPlayers(currentPlayers.get(0),currentPlayers.get(1));
+
+            }
+
+            if(gameName.equals("Memory")){
+                MemoryController controller = fxmlLoader.getController();
+                controller.setPlayers(currentPlayers.get(0),currentPlayers.get(1));
+
+            }
 
 
 
