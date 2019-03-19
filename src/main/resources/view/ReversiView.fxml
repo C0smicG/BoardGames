@@ -1,14 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Master.java.controller.ReversiController"
-            prefHeight="400.0" prefWidth="600.0">
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Reversi.ReversiController">
+    <center>
+        <GridPane fx:id="gameBoard" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="b0_0" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" />
+                <Button fx:id="b0_1" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="1" />
+                <Button fx:id="b0_2" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="2" />
+                <Button fx:id="b0_3" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="3" />
+                <Button fx:id="b0_4" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="4" />
+                <Button fx:id="b0_5" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="5" />
+                <Button fx:id="b0_6" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="6" />
+                <Button fx:id="b0_7" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="7" />
 
-</AnchorPane>
+                <Button fx:id="b1_0" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.rowIndex="1" />
+                <Button fx:id="b1_1" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Button fx:id="b1_2" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <Button fx:id="b1_3" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                <Button fx:id="b1_4" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                <Button fx:id="b1_5" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                <Button fx:id="b1_6" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                <Button fx:id="b1_7" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+
+
+
+                <Button fx:id="b2_0" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.rowIndex="2" />
+                <Button fx:id="b2_1" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Button fx:id="b2_2" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <Button fx:id="b2_3" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                <Button fx:id="b2_4" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                <Button fx:id="b2_5" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                <Button fx:id="b2_6" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                <Button fx:id="b2_7" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+
+                <Button fx:id="b3_0" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.rowIndex="3" />
+                <Button fx:id="b3_1" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <Button fx:id="b3_2" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                <Button fx:id="b3_3" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: BLACK;" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                <Button fx:id="b3_4" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: WHITE;" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                <Button fx:id="b3_5" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                <Button fx:id="b3_6" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+                <Button fx:id="b3_7" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+
+                <Button fx:id="b4_0" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.rowIndex="4" />
+                <Button fx:id="b4_1" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <Button fx:id="b4_2" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                <Button fx:id="b4_3" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: WHITE;" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                <Button fx:id="b4_4" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: BLACK;" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                <Button fx:id="b4_5" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                <Button fx:id="b4_6" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+                <Button fx:id="b4_7" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+
+
+                <Button fx:id="b5_0" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.rowIndex="5" />
+                <Button fx:id="b5_1" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <Button fx:id="b5_2" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                <Button fx:id="b5_3" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                <Button fx:id="b5_4" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                <Button fx:id="b5_5" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                <Button fx:id="b5_6" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+                <Button fx:id="b5_7" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="7" GridPane.rowIndex="5" />
+
+                <Button fx:id="b6_0" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.rowIndex="6" />
+                <Button fx:id="b6_1" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                <Button fx:id="b6_2" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                <Button fx:id="b6_3" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                <Button fx:id="b6_4" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+                <Button fx:id="b6_5" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+                <Button fx:id="b6_6" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+                <Button fx:id="b6_7" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="7" GridPane.rowIndex="6" />
+
+
+                <Button fx:id="b7_0" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.rowIndex="7" />
+                <Button fx:id="b7_1" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                <Button fx:id="b7_2" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                <Button fx:id="b7_3" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                <Button fx:id="b7_4" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+                <Button fx:id="b7_5" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+                <Button fx:id="b7_6" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="6" GridPane.rowIndex="7" />
+                <Button fx:id="b7_7" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="7" GridPane.rowIndex="7" />
+
+
+
+
+
+            </children>
+            <columnConstraints>
+                <ColumnConstraints />
+                <ColumnConstraints />
+                <ColumnConstraints />
+                <ColumnConstraints />
+                <ColumnConstraints />
+                <ColumnConstraints />
+                <ColumnConstraints />
+                <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+            </rowConstraints>
+        </GridPane>
+    </center>
+</BorderPane>

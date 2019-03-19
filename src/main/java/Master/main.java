@@ -17,7 +17,8 @@ public class main extends Application {
     @Override
     public  void start(Stage primaryStage) throws Exception{
 
-        URL url = getClass().getResource("/view/Master.fxml");
+        URL url = getClass().getResource("/view/MasterView.fxml");
+        System.out.println(url);
         if (url == null) {
             System.out.println("No FXML file found, \"" + "Master.fxml" + "\"");
             Platform.exit();

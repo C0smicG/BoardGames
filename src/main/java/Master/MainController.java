@@ -10,6 +10,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 import TicTacToe.TicTacToeController;
+import Reversi.ReversiController;
+import Memory.MemoryController;
+import Checkers.CheckersController;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -63,10 +66,32 @@ public class MainController {
 
 
 
-            TicTacToeController controller = fxmlLoader.getController();
+            if(gameName.equals("TicTacToe")){
+                TicTacToeController controller = fxmlLoader.getController();
+                controller.setPlayers(currentPlayers.get(0),currentPlayers.get(1));
+
+            }
+
+            if(gameName.equals("Reversi")){
+                ReversiController controller = fxmlLoader.getController();
+                controller.setPlayers(currentPlayers.get(0),currentPlayers.get(1));
+
+            }
+
+//            if(gameName.equals("Checkers")){
+//                CheckersController controller = fxmlLoader.getController();
+//                controller.setPlayers(currentPlayers.get(0),currentPlayers.get(1));
+//
+//            }
+//
+//            if(gameName.equals("Memory")){
+//                MemoryController controller = fxmlLoader.getController();
+//                controller.setPlayers(currentPlayers.get(0),currentPlayers.get(1));
+//
+//            }
 
 
-            controller.setPlayers(currentPlayers.get(0),currentPlayers.get(1));
+
             Stage stage = new Stage();
             stage.setTitle(gameName);
             stage.setScene(new Scene(gameFXML));
@@ -76,3 +101,4 @@ public class MainController {
         }
     }
 }
+

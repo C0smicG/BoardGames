@@ -1,6 +1,8 @@
 package TicTacToe;
 
 import Master.main;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import util.Users;
 
 import javafx.application.Platform;
@@ -16,6 +18,13 @@ public class TicTacToeController {
     private TicTacToe game;
     Users player1;
     Users player2;
+
+    @FXML
+    Label PlayerOne;
+
+    @FXML
+    Label PlayerTwo;
+
     private int turn = 0;
     public Button b1, b2, b3, b4, b5, b6, b7, b8, b9;
 
@@ -31,6 +40,14 @@ public class TicTacToeController {
         this.player2 = player2;
         game.setStages(player1, player2);
         game.setFirstStage("0", player1);
+
+
+        System.out.print("PLAYERONE");
+        System.out.print(PlayerOne);
+        PlayerOne.setText(player1.getName());
+        PlayerTwo.setText(player2.getName());
+
+
     }
 
     public void handleButtonClicked(Event event) {
