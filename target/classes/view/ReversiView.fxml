@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Reversi.ReversiController">
+<BorderPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Reversi.ReversiController">
     <center>
         <GridPane fx:id="gameBoard" BorderPane.alignment="CENTER">
             <children>
+
                 <Button fx:id="b0_0" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" />
                 <Button fx:id="b0_1" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="1" />
                 <Button fx:id="b0_2" blendMode="DARKEN" onAction="#handleButtonClicked" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: GREY; -fx-background-color: DARKGREEN;" GridPane.columnIndex="2" />
@@ -111,4 +113,47 @@
             </rowConstraints>
         </GridPane>
     </center>
+   <top>
+      <Label text="Reversi" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+   </top>
+   <left>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label fx:id="p1Label" text="Player One" underline="true" />
+                  <Label fx:id="p1Score" text="2">
+                     <font>
+                        <Font size="52.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label fx:id="p2Label" text="Player Two" />
+                  <Label fx:id="p2Score" text="2">
+                     <font>
+                        <Font size="52.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <Label text="Nothin to see" visible="false" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <Label text="Label" visible="false" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+   </bottom>
 </BorderPane>

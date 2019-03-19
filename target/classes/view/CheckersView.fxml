@@ -246,7 +246,7 @@
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="36.0">
                <children>
                   <Label fx:id="Player1" text="Player 1" underline="true" />
-                  <Label text="0">
+                  <Label fx:id="Score1"  text="0">
                      <font>
                         <Font size="52.0" />
                      </font>
@@ -256,7 +256,7 @@
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="36.0">
                <children>
                   <Label fx:id="Player2" text="Player 2" />
-                  <Label text="0">
+                  <Label fx:id="Score2" text="0">
                      <font>
                         <Font size="52.0" />
                      </font>

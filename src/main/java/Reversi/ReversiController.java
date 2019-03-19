@@ -6,19 +6,24 @@ import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Control;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import util.Controller;
 import util.Users;
 
 import java.util.List;
 
-public class ReversiController //implements Controller
+public class ReversiController implements Controller
 {
-    public void setPlayers(Users player1, Users player2){
 
-    }
+    @FXML
+    Label p1Label;
+
+    @FXML
+    Label p2Label;
 
 
     @FXML
@@ -44,6 +49,12 @@ public class ReversiController //implements Controller
 
 
     }
+
+    public void setPlayers(Users player1, Users player2){
+        p1Label.setText(player1.getName());
+        p2Label.setText(player2.getName());
+    }
+
 
     public String getTurn()
     {

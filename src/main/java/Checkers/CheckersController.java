@@ -21,7 +21,13 @@ public class CheckersController {
         @FXML
         private Label Player2;
 
-        private Checkers game;
+        @FXML
+        private Label Score1;
+        @FXML
+        private Label Score2;
+
+
+    private Checkers game;
         private String playerturn;
 
         public CheckersController(){
@@ -56,6 +62,10 @@ public class CheckersController {
                 }
 
             }
+
+            Score1.setText(Integer.toString(game.scoreBoard(game.whiteplayer)));
+            Score2.setText(Integer.toString(game.scoreBoard(game.redplayer)));
+
 
         }
 
