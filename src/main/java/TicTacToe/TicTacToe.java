@@ -106,7 +106,6 @@ public class TicTacToe implements GameLogic {
     }
 
     public void makeMove(int row, int col){
-
     }
 
     public boolean isValid(){
