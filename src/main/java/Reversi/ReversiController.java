@@ -1,5 +1,7 @@
 package Reversi;
 
+import util.*;
+
 import javafx.application.Platform;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -11,7 +13,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import util.Controller;
 import util.Users;
 
 import java.util.List;
@@ -19,12 +20,11 @@ import java.util.List;
 public class ReversiController implements Controller
 {
 
-    @FXML
-    Label p1Label;
 
     @FXML
-    Label p2Label;
-
+    private Label p1Score, p2Score;
+    @FXML
+    private Label p1Label, p2Label;
 
     @FXML
     private Button b0_0, b0_1, b0_2, b0_3, b0_4, b0_5, b0_6, b0_7,
@@ -40,6 +40,13 @@ public class ReversiController implements Controller
     private Reversi game;
     private int turn = 0;
 
+    public void setPlayers(Users player1, Users player2)
+    {
+        p1Label.setText(player1.getName());
+        p2Label.setText(player2.getName());
+
+
+    }
 
 
     public ReversiController()
@@ -49,12 +56,6 @@ public class ReversiController implements Controller
 
 
     }
-
-    public void setPlayers(Users player1, Users player2){
-        p1Label.setText(player1.getName());
-        p2Label.setText(player2.getName());
-    }
-
 
     public String getTurn()
     {
@@ -425,7 +426,15 @@ public class ReversiController implements Controller
 
             }
         }
+
+
+
         game.makeMove(row,col);
+        p2Score.setText(Integer.toString(game.numOfBlackPieces()));
+        p1Score.setText(Integer.toString(game.numOfWhitePieces()));
+
+
+
 
 
         switchMove();
@@ -487,7 +496,7 @@ public class ReversiController implements Controller
     private String winnerOrTie() {
         if (!game.getWinner().equals("")) {
             return "Winner!: " + game.getWinner();
-        } else if (game.isGameOver()) {
+        } else if (game.IsGameOver()) {
             return "Game was a tie!";
         }
         return "";
