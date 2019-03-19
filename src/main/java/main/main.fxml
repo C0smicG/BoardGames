@@ -11,24 +11,24 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="401.0" prefWidth="468.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.main.MainController">
-   <children>
-      <RadioButton id="ReversiView.fxml" fx:id="ReversiView" layoutX="126.0" layoutY="77.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="Reversi">
-         <toggleGroup>
-            <ToggleGroup fx:id="toggleGroup" />
-         </toggleGroup></RadioButton>
-      <RadioButton id="TictactoeView.fxml" fx:id="TicTacToeView" layoutX="126.0" layoutY="106.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="TicTacToe" toggleGroup="$toggleGroup" />
-      <RadioButton id="CheckersView.fxml" fx:id="CheckersView" layoutX="239.0" layoutY="106.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="Checkers" toggleGroup="$toggleGroup" />
-      <RadioButton id="MemoryView.fxml" fx:id="MemoryView" layoutX="236.0" layoutY="77.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="Memory" toggleGroup="$toggleGroup" />
-      <Button layoutX="191.0" layoutY="346.0" mnemonicParsing="false" onAction="#handlePlayClicked" prefHeight="27.0" prefWidth="92.0" text="Play" />
-      <Text layoutX="194.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Steam" textAlignment="CENTER">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Text>
-      <TextField fx:id="playerone" layoutX="33.0" layoutY="232.0" />
-      <TextField fx:id="playertwo" layoutX="305.0" layoutY="229.0" />
-      <Label layoutX="33.0" layoutY="215.0" text="Player one:" />
-      <Label layoutX="305.0" layoutY="209.0" text="Player Two:" />
-   </children>
+<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MainController">
+    <children>
+        <RadioButton id="ReversiView.fxml" fx:id="ReversiView" layoutX="179.0" layoutY="174.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="Reversi">
+            <toggleGroup>
+                <ToggleGroup fx:id="toggleGroup" />
+            </toggleGroup></RadioButton>
+        <RadioButton id="TicTacToeView.fxml" fx:id="TicTacToeView" layoutX="179.0" layoutY="209.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="TicTacToe" toggleGroup="$toggleGroup" />
+        <RadioButton id="CheckersView.fxml" fx:id="CheckersView" layoutX="300.0" layoutY="209.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="Checkers" toggleGroup="$toggleGroup" />
+        <RadioButton id="MemoryView.fxml" fx:id="MemoryView" layoutX="300.0" layoutY="174.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="Memory" toggleGroup="$toggleGroup" />
+        <Button layoutX="244.0" layoutY="385.0" mnemonicParsing="false" onAction="#handlePlayClicked" prefHeight="27.0" prefWidth="92.0" text="Play" />
+        <Text layoutX="250.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Steam" textAlignment="CENTER">
+            <font>
+                <Font size="29.0" />
+            </font>
+        </Text>
+        <TextField fx:id="playerone" layoutX="95.0" layoutY="304.0" />
+        <TextField fx:id="playertwo" layoutX="322.0" layoutY="304.0" />
+        <Label layoutX="95.0" layoutY="280.0" text="Player One:" />
+        <Label layoutX="336.0" layoutY="280.0" text="Player Two:" />
+    </children>
 </AnchorPane>
