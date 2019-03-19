@@ -17,7 +17,7 @@
             <toggleGroup>
                 <ToggleGroup fx:id="toggleGroup" />
             </toggleGroup></RadioButton>
-        <RadioButton id="TicTacToeView.fxml" fx:id="TicTacToeView" layoutX="179.0" layoutY="209.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="TicTacToe" toggleGroup="$toggleGroup" />
+        <RadioButton id="TictactoeView.fxml" fx:id="TicTacToeView" layoutX="179.0" layoutY="209.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="TicTacToe" toggleGroup="$toggleGroup" />
         <RadioButton id="CheckersView.fxml" fx:id="CheckersView" layoutX="300.0" layoutY="209.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="Checkers" toggleGroup="$toggleGroup" />
         <RadioButton id="MemoryView.fxml" fx:id="MemoryView" layoutX="300.0" layoutY="174.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="Memory" toggleGroup="$toggleGroup" />
         <Button layoutX="244.0" layoutY="385.0" mnemonicParsing="false" onAction="#handlePlayClicked" prefHeight="27.0" prefWidth="92.0" text="Play" />

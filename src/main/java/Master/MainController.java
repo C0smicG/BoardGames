@@ -14,6 +14,8 @@ import Reversi.ReversiController;
 import Memory.MemoryController;
 import Checkers.CheckersController;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -46,15 +48,22 @@ public class MainController {
     public void handlePlayClicked(){
         String gameName = ((RadioButton)toggleGroup.getSelectedToggle()).getText();
         String gameToOpen = ((RadioButton)toggleGroup.getSelectedToggle()).getId();
-        System.out.println(playerone.getText());
+
+
+
         if (!database.containsKey(playerone.getText())){
             currentPlayers.add(new Users(playerone.getText()));
+            database.put(playerone.getText(), new Users(playerone.getText()));
+
         }else{
             currentPlayers.add(database.get(playerone.getText()));
+
         }
 
         if (!database.containsKey(playertwo.getText())){
             currentPlayers.add(new Users(playertwo.getText()));
+            database.put(playertwo.getText(), new Users(playertwo.getText()));
+
         }else{
             currentPlayers.add(database.get(playertwo.getText()));
         }
