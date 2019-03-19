@@ -30,7 +30,7 @@ public class main extends Application {
         Parent root = FXMLLoader.load(url);
         primStage = primaryStage;
         primStage.setTitle("Game Launcher");
-        primStage.setScene(new Scene(root, 600, 400));
+        primStage.setScene(new Scene(root, 600, 500));
         primStage.show();
         System.out.println();
     }
