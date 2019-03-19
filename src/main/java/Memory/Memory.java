@@ -2,6 +2,9 @@ package Memory;
 import java.util.ArrayList;
 import java.util.Random;
 
+import main.java.util.Board;
+import main.java.util.Users;
+
 public class Memory //implements GameLogic
 {
     private Board board;

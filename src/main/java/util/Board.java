@@ -27,14 +27,14 @@ public class Board {
 
 
         // returns num of rows
-        int getRows()
+        public int getRows()
         {
             return rows;
         }
 
 
         // returns num of columns
-        int getCols()
+        public int getCols()
         {
             return cols;
         }
@@ -47,12 +47,12 @@ public class Board {
 
 
         // pass in new array to update the Board
-        void updateBoard( List<List<String>> updatedBoard)
+        public void updateBoard( List<List<String>> updatedBoard)
         {
             board = updatedBoard;
         }
 
-        void updateBoard(int row ,  int col , String value)
+        public void updateBoard(int row ,  int col , String value)
         {
             board.get(row).set(col, value);
         }
