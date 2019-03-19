@@ -88,8 +88,8 @@ public class MainController {
 
             }
 
-            if(gameName.equals("BattleShip")){
-                BattleShipController controller = fxmlLoader.getController();
+            if(gameName.equals("Memory")){
+                MemoryController controller = fxmlLoader.getController();
                 controller.setPlayers(currentPlayers.get(0),currentPlayers.get(1));
 
             }
