@@ -1,57 +1,54 @@
 package Memory;
+import util.Board;
+import util.GameLogic;
+import util.Users;
+
 import java.util.ArrayList;
 import java.util.Random;
-import util.*;
 
-public class Memory //implements GameLogic
-{
+public class Memory implements GameLogic {
     private Board board;
     Users[] players;
     int currentTurn;
-    private int [] scoreboard;
+    private int[] scoreboard;
     int dimension;
 
-
-    Memory(int dim) // dim should be even by the way
+    Memory(int dim)
     {
         board = new Board(dim, dim);
         fillBoard();
-        scoreboard = new int[]{0,0};
+        scoreboard = new int[]{0, 0};
         currentTurn = 0;
         dimension = dim;
     }
 
-    public void makeMove (int x, int y)
-    {
-    // not exactly sure what this does yet
+    public void makeMove(int x, int y, Users users) {
     }
 
-    public boolean isValid()
-    {
-        return false;
+    public boolean isValid(int row, int col) {
+        return (row < dimension && row >= 0 && col < dimension && col >= 0);
     }
 
-    public void changePlayer()
-    {
-        if(currentTurn == 0)
+    public void changePlayer() {
+        if (currentTurn == 0)
             currentTurn = 1;
         else
             currentTurn = 0;
     }
 
-    public Users getCurrentPlayer()
+    public boolean isGameOver()
     {
-        return players[currentTurn];
-    }
-    public boolean IsGameOver()
-    {
-        return((scoreboard[0] + scoreboard[1]) == dimension * dimension / 2);
+        return ((scoreboard[0] + scoreboard[1]) == dimension * dimension / 2);
     }
 
-    //getWinner()
-    public Board getBoard()
-    {
-        return board;
+    public String getWinner(){
+        if(scoreboard[0] > scoreboard[1])
+            return players[0].getName() + " wins!";
+        else if (scoreboard[0] < scoreboard[1])
+            return players[1].getName() + " wins!";
+        else
+            return "Tie!";
+
     }
 
     public void fillBoard() { //fills board with random pairs of numbers
@@ -64,10 +61,8 @@ public class Memory //implements GameLogic
             elements.add(i);
         }
 
-        for(int i = 0; i < board.getRows(); i++)
-        {
-            for(int j = 0; j < board.getCols(); j++)
-            {
+        for (int i = 0; i < board.getRows(); i++) {
+            for (int j = 0; j < board.getCols(); j++) {
                 int randIndex = rand.nextInt(elements.size()); //get random index
                 String data = elements.get(randIndex).toString(); //retrieve data
                 elements.remove(randIndex); // remove element so it is not chosen again
@@ -86,8 +81,8 @@ public class Memory //implements GameLogic
         return scoreboard;
     }
 
-    String lookup(int row, int col)
+    public String lookup(int row, int col)
     {
-        return board.getBoard().get(row).get(col); //this is really ugly
+        return board.getBoard().get(row).get(col);
     }
 }
