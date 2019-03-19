@@ -10,10 +10,7 @@ import javafx.scene.control.Label;
 
 import util.Users;
 
-import java.awt.*;
-import java.util.List;
-
-    public class CheckersController {
+public class CheckersController {
 
 
 
@@ -107,9 +104,9 @@ import java.util.List;
 
         public void makeKing(int tempc, int tempr){
             //This method sets the crown image of the turn and sets its ID to the corresponding color
-            javafx.scene.image.Image img = new javafx.scene.image.Image("/sample/RedCrown.png");
+            javafx.scene.image.Image img = new javafx.scene.image.Image(getClass().getResource("/view/RedCrown.png").toString());
             if(playerturn == "W"){
-                img = new Image("/sample/WhiteCrown.png");
+                img = new Image(getClass().getResource("/view/WhiteCrown.png").toString());
             }
             ImageView crown = new ImageView(img);
             crown.setFitHeight(50);
