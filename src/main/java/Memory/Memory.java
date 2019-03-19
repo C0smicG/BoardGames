@@ -23,7 +23,7 @@ public class Memory implements GameLogic
 
     public void makeMove (int x, int y)
     {
-    // not exactly sure what this does yet
+        lookup(x, y);
     }
 
     public boolean isValid()
